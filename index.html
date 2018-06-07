@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Starter Kits</title>
+    <link rel="stylesheet" href="./0_reset.css">
+    <link rel="stylesheet" href="./1_grid.css">
+    <link rel="stylesheet" href="./2_nav.css">
+    <link rel="stylesheet" href="./3_button.css">
+    <link rel="stylesheet" href="./3_card.css">
+    <link rel="stylesheet" href="./3_jumbotron.css">
+    <link rel="stylesheet" href="./4_main.css">
+    <style>
+        .box {
+            background-color: orange;
+            height: 50px;
+            margin: 15px 0;
+        }
+        .logo {
+            display: inline-block;
+            height: 45px;
+            width: 55px;
+            background-color: red;
+        }
+        .toggle-icon {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="brand">
+                <span class="logo"></span>
+                <span class="title">Basic Nav</span>
+            </div>
+            <button class="toggle">
+                <span class="toggle-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse right">
+                <ul>
+                    <li class="item">
+                        <a href="#" class="link">Get Started</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">Products</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">Pricing</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">
+                            <button class="btn">Sign Up</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="title">I'm a Jumbotron</div>
+            <p class="info">And here are some useful info for that</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col-sm-3">
+                <div class="box"></div>
+            </div>
+            <div class="col-md-3">
+                <div class="box"></div>
+            </div>
+            <div class="col-lg-3">
+                <div class="box"></div>
+            </div>
+            <div class="col-xl-3">
+                <div class="box"></div>
+            </div>
+        </div> -->
+        <!-- <div class="card-deck">
+            <div class="card">
+                <div class="header">
+                    <div class="title">
+                        <div class="main">I'm a Card</div>
+                        <div class="sub">And some more text here</div>
+                    </div>
+                </div>
+                <div class="body">
+                    <p class="content">
+                        I am the content of this card. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eius officia adipisci illo quibusdam corporis quas deleniti beatae aut velit perspiciatis repudiandae ea saepe, nobis, corrupti dicta inventore. At, fugit.
+                    </p>
+                    <p class="content">
+                        I am the content of this card. Lorem
+                    </p>
+                </div>
+                <div class="footer">
+                    <p class="content">
+                        I am the footer content
+                    </p>
+                    <button class="btn primary">Click Me!</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <div class="title">
+                        <div class="main">I'm a Card</div>
+                        <div class="sub">And some more text here</div>
+                    </div>
+                </div>
+                <div class="body">
+                    <p class="content">
+                        I am the content of this card. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eius officia adipisci illo quibusdam corporis quas deleniti beatae aut velit perspiciatis repudiandae ea saepe, nobis, corrupti dicta inventore. At, fugit.
+                    </p>
+                    <p class="content">
+                        I am the content of this card. Lorem
+                    </p>
+                </div>
+                <div class="footer">
+                    <p class="content">
+                        I am the footer content
+                    </p>
+                    <button class="btn primary">Click Me!</button>
+                </div>
+            </div>
+            <div class="card no-border">
+                <div class="header">
+                    <div class="title">
+                        <div class="main">I'm a Card</div>
+                        <div class="sub">And some more text here</div>
+                    </div>
+                </div>
+                <div class="body">
+                    <p class="content">
+                        I am the content of this card. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eius officia adipisci illo quibusdam corporis quas deleniti beatae aut velit perspiciatis repudiandae ea saepe, nobis, corrupti dicta inventore. At, fugit.
+                    </p>
+                    <p class="content">
+                        I am the content of this card. Lorem
+                    </p>
+                </div>
+                <div class="footer">
+                    <p class="content">
+                        I am the footer content
+                    </p>
+                    <button class="btn primary">Click Me!</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <div class="title">
+                        <div class="main">I'm a Card</div>
+                        <div class="sub">And some more text here</div>
+                    </div>
+                </div>
+                <div class="body">
+                    <p class="content">
+                        I am the content of this card. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eius officia adipisci illo quibusdam corporis quas deleniti beatae aut velit perspiciatis repudiandae ea saepe, nobis, corrupti dicta inventore. At, fugit.
+                    </p>
+                    <p class="content">
+                        I am the content of this card. Lorem
+                    </p>
+                </div>
+                <div class="footer">
+                    <p class="content">
+                        I am the footer content
+                    </p>
+                    <button class="btn primary">Click Me!</button>
+                </div>
+            </div>
+        </div> -->
+        <div class="card no-border medium">
+            <div class="header">
+                <img class="icon" src="./img/icon.png" alt="">
+                <div class="title">
+                    <div class="main">Medium with no Border</div>
+                    <div class="sub">And some more text here</div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="filter dark">
+                    <img class="image" src="./img/box-img.jpg" alt="">
+                </div>
+                <p class="content">
+                    I am the content of this card. Lorem
+                </p>
+            </div>
+            <div class="footer">
+                <p class="content">
+                    I am the footer content
+                </p>
+                <button class="btn primary">Click Me!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./nav.js" type="text/javascript"></script>
+</body>
+</html>

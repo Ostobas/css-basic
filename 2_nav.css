@@ -1,0 +1,127 @@
+nav.nav {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    -webkit-transition: .4s background-color ease-out;
+    transition: .4s background-color ease-out;
+    padding: .5rem 0;
+}
+.nav > .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.nav .collapse {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    display: none;
+}
+@media (min-width: 576px) {
+    .nav .container {
+        flex-wrap: nowrap;
+    }
+    .nav .collapse {
+        display: -ms-flexbox;
+        display: flex; 
+    }
+    .nav button.toggle {
+        display: none;
+    }
+}
+.nav .collapse.active {
+    display: block;
+}
+.nav .collapse.active > ul {
+    flex-direction: column;
+}
+.nav .collapse.right {
+    justify-content: flex-end;
+}
+.nav .collapse > ul {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.nav .brand {
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #fff;
+}
+.nav .brand .logo {
+    display: inline-block;
+    margin-right: .75rem;
+    background-position: center center;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+.nav .toggle-icon {
+    font-size: 2.5rem;
+}
+.nav .item, .nav .toggle-icon{
+    color: rgba(255,255,255,.5);
+}
+.nav .link {
+    display: block;
+    padding: .5rem 1rem;
+}
+.nav .item:hover {
+    color: rgba(255,255,255,.75);
+}
+.nav .item.active {
+    color: #fff;
+}
+.nav.fixed {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+.nav.top {
+    top: 0;
+}
+.nav.bottom {
+    bottom: 0;
+}
+.nav.light {
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1);
+    -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1);
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1);
+}
+.nav.light .brand, .nav.light .toggle-icon {
+    color: rgba(0,0,0,.9);
+}
+.nav.light .item {
+    color: rgba(0,0,0,.5);
+}
+.nav.light .item:hover {
+    color: rgba(0,0,0,.75);
+}
+.nav.light .item.active {
+    color: rgba(0,0,0,.9);
+}
