@@ -470,8 +470,18 @@
 .relative { position: relative; }
 .d-inline { display: inline; }
 .d-block { display: block; }
+.d-flex { display: -ms-flexbox; display: flex; }
 @media (max-width: 576px) {
   .mt-1-xs { margin-top: 1rem; }
   .mt-2-xs { margin-top: 2rem; }
   .mt-3-xs { margin-top: 3rem; }
+  .d-block-xs { display: block; }
+  .d-none-xs { display: none; }
+}
+@media (min-width: 768px) {
+  .mt-1-md { margin-top: 1rem; }
+  .mt-2-md { margin-top: 2rem; }
+  .mt-3-md { margin-top: 3rem; }
+  .d-block-md { display: block; }
+  .d-none-md { display: none; }
 }
