@@ -470,3 +470,8 @@
 .relative { position: relative; }
 .d-inline { display: inline; }
 .d-block { display: block; }
+@media (max-width: 576px) {
+  .mt-1-xs { margin-top: 1rem; }
+  .mt-2-xs { margin-top: 2rem; }
+  .mt-3-xs { margin-top: 3rem; }
+}

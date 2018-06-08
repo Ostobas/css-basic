@@ -38,6 +38,9 @@
     padding: .65rem 0;
     margin: 0 1rem;
 }
+.card .header.center {
+    justify-content: center;
+}
 .card .title .main {
     font-size: 1.5rem;
 }
@@ -56,7 +59,12 @@
     -ms-flex-direction: column;
     align-items: flex-start;
     text-align: justify;
-    min-height: 225px;
+    min-height: 150px;
+}
+@media (min-width: 576px) {
+    .card .body {
+        min-height: 225px;
+    }
 }
 .card .body .content {
     margin-bottom: .5rem;
@@ -64,6 +72,10 @@
 }
 .card .footer {
     justify-content: space-between;
+}
+.card .footer.column {
+    flex-direction: column;
+    -ms-flex-direction: column;
 }
 .card .image {
     width: 100%;

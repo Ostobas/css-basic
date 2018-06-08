@@ -74,6 +74,7 @@ nav.nav {
     position: relative;
     height: 0;
     overflow: hidden;
+    -webkit-transition: .3s height ease-out;
     transition: .3s height ease-out;
 }
 .nav .right {
@@ -114,7 +115,7 @@ nav.nav {
 }
 .nav.fixed {
     position: fixed;
-    z-index: 10;
+    z-index: 90;
     left: 0;
     right: 0;
     width: 100%;
@@ -131,8 +132,11 @@ nav.nav {
     -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1);
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1);
 }
-.nav.light .brand, .nav.light .toggle-icon {
+.nav.light .brand {
     color: rgba(0,0,0,.9);
+}
+.nav.light .toggle-icon {
+    color: rgba(0, 0, 0, .7);
 }
 .nav.light .item {
     color: rgba(0,0,0,.5);
