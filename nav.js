@@ -1,5 +1,6 @@
 (function () {
 
+    var collapse = document.querySelector('.nav .collapse')
 
     function addNavItemListeners() {
         document.querySelectorAll('.nav .item')
@@ -19,20 +20,52 @@
     }
     
     function addToggleBtnListener() {
-        document.querySelector('.nav .toggle')
-            .addEventListener('click', function() {
-                toggleCollapse()
+        document.querySelectorAll('.nav .toggle')
+        .forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                toggleCollapse(300)
             })
+        })
     }
 
-    function toggleCollapse() {
-        document.querySelector('.nav .collapse')
-        .classList.toggle('active')
+    function toggleCollapse(time) {
+        if (collapse.classList.contains('active')) {
+            closeCollapse(time)
+        } else {
+            openCollapse(time)
+        }
     }
 
-    function closeCollapse() {
-        document.querySelector('.nav .collapse')
-        .classList.remove('active')
+    function closeCollapse(time) {
+        removeHeight()
+        collapse.classList.add('collapsing')
+        setTimeout(function() {
+            collapse.classList.remove('active')
+        }, 0)
+        setTimeout(function() {
+            collapse.classList.remove('collapsing')
+        }, time)
+    }
+
+    function openCollapse(time) {
+        collapse.classList.add('collapsing')
+        setTimeout(function() {
+            setActiveHeight()
+            collapse.classList.add('active')
+        }, 0)
+        setTimeout(function() {
+            collapse.classList.remove('collapsing')
+        }, time)
+        
+    }
+
+    function setActiveHeight() {
+        var h = collapse.querySelector('ul').offsetHeight
+        collapse.setAttribute('style', 'height:'+ h +'px')
+    }
+
+    function removeHeight() {
+        collapse.setAttribute('style', '')
     }
 
     function siblings(div) {
@@ -50,8 +83,16 @@
     }
     
     (function () {
-        addNavItemListeners()
-        addToggleBtnListener()
+        try {
+            addNavItemListeners()
+        } catch(error) {
+            console.log('[Error] There are no navigation links in the page.')
+        }
+        try {
+            addToggleBtnListener()
+        } catch(error) {
+            console.log('[Error] There is no toggle button in the page.')
+        }
     })()
 
 })()

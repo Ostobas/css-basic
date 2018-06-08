@@ -30,6 +30,21 @@ nav.nav {
     flex-wrap: wrap;
     display: none;
 }
+.nav ul {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+.nav .collapse ul {
+    align-items: flex-start;
+    padding: 1rem 0;
+}
+.nav .link {
+    display: block;
+    padding: .5rem;
+}
 @media (min-width: 576px) {
     .nav .container {
         flex-wrap: nowrap;
@@ -38,24 +53,31 @@ nav.nav {
         display: -ms-flexbox;
         display: flex; 
     }
+    .nav ul, .nav .collapse > ul {
+        align-items: center;
+        padding: 0;
+    }
+    .nav .link {
+        padding: .5rem 1.2rem;
+    }
     .nav button.toggle {
         display: none;
     }
 }
-.nav .collapse.active {
+.nav .collapse.collapsing, .nav .collapse.active {
     display: block;
 }
-.nav .collapse.active > ul {
+.nav .collapse.collapsing > ul, .nav .collapse.active > ul {
     flex-direction: column;
 }
-.nav .collapse.right {
-    justify-content: flex-end;
+.nav .collapse.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: .3s height ease-out;
 }
-.nav .collapse > ul {
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.nav .right {
+    justify-content: flex-end;
 }
 .nav .brand {
     display: -ms-flexbox;
@@ -83,10 +105,6 @@ nav.nav {
 }
 .nav .item, .nav .toggle-icon{
     color: rgba(255,255,255,.5);
-}
-.nav .link {
-    display: block;
-    padding: .5rem 1rem;
 }
 .nav .item:hover {
     color: rgba(255,255,255,.75);
