@@ -56,8 +56,10 @@
     font-size: 1.2rem;
     font-weight: 700;
 }
-.modal .close {
+.modal .close-icon {
     font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1;
     cursor: pointer;
     padding: 0 .5rem;
 }
