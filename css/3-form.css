@@ -85,7 +85,7 @@
 .form .checkbox label {
     position: relative;
     display: block;
-    padding-left: 1.85em;
+    padding-left: 30px;
     outline: 0;
     font-size: .9rem;
     cursor: pointer;
