@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/3-button.css">
     <link rel="stylesheet" href="./css/3-card.css">
     <link rel="stylesheet" href="./css/3-footer.css">
+    <link rel="stylesheet" href="./css/3-form.css">
     <link rel="stylesheet" href="./css/3-jumbotron.css">
     <link rel="stylesheet" href="./css/3-modal.css">
     <link rel="stylesheet" href="./css/3-ribbon.css">
@@ -73,6 +74,45 @@
             <p class="info">And here are some useful info for that</p>
         </div>
     </div>
+
+    <section id="forms">
+        <div class="container">
+            <form class="form small" action="">
+                <div class="field">
+                    <label>Email address</label>
+                    <input type="email" name="email"placeholder="jondoe@example.com">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="password"placeholder="min six characters">
+                    <small><a href="#">Forgot password?</a></small>
+                </div>
+                <div class="field">
+                    <div class="checkbox">
+                        <input type="checkbox" id="myCheckbox">
+                        <label for="myCheckbox">I agree to the <a>Terms and Conditions</a></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="checkbox radio">
+                        <input type="radio" name="sameRadioName" id="myRadio1" checked>
+                        <label for="myRadio1">
+                            Male
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="checkbox radio">
+                        <input type="radio" name="sameRadioName" id="myRadio2">
+                        <label for="myRadio2">
+                            Female
+                        </label>
+                    </div>
+                </div>
+                <button class="btn" type="submit">Login</button>
+            </form>
+        </div>
+    </section>
 
     <div class="container">
         <!-- <div class="row">

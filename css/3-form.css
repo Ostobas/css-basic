@@ -1,0 +1,143 @@
+.form {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.form.small {
+    max-width: 420px;
+}
+.form .field {
+    clear: both;
+    margin-bottom: 1rem;
+}
+.form .field > label {
+    display: block;
+    margin-bottom: .25rem;
+    color: rgba(0,0,0,85);
+    font-size: .9rem;
+    font-weight: 700;
+    text-transform: none;
+}
+.form input:not([type]), .form input[type=date], .form input[type=datetime-local], .form input[type=email], .form input[type=file], .form input[type=number], .form input[type=password], .form input[type=search], .form input[type=tel], .form input[type=text], .form input[type=time], .form input[type=url] {
+    width: 100%;
+    vertical-align: middle;
+    outline: 0;
+    -webkit-appearance: none;
+    line-height: 1.2;
+    padding: .5rem 1rem;
+    background-color: #fff;
+    color: rgba(0,0,0,.85);
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .28rem;
+    -webkit-box-shadow: 0 0 0 0 transparent inset;
+    box-shadow: 0 0 0 0 transparent inset;
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
+}
+.form input:not([type]):focus, .form input[type=date]:focus, .form input[type=datetime-local]:focus, .form input[type=email]:focus, .form input[type=file]:focus, .form input[type=number]:focus, .form input[type=password]:focus, .form input[type=search]:focus, .form input[type=tel]:focus, .form input[type=text]:focus, .form input[type=time]:focus, .form input[type=url]:focus {
+    color: rgba(0,0,0,.95);
+    border-color: #85b7d9;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 0 0 rgba(34,36,38,.35) inset;
+    box-shadow: 0 0 0 0 rgba(34,36,38,.35) inset;
+}
+.form .field small {
+    display: block;
+    color: #6c757d;
+    margin-top: .35rem;
+}
+.form ::-webkit-input-placeholder {
+    color: rgba(191, 191, 191, 0.87);
+}
+.form :-ms-input-placeholder {
+    color: rgba(191, 191, 191, 0.87);
+}
+.form ::-moz-placeholder {
+    color: rgba(191, 191, 191, 0.87);
+}
+.form :focus::-webkit-input-placeholder {
+    color: rgba(115, 115, 115, 0.87);
+}
+.form :focus:-ms-input-placeholder {
+    color: rgba(115, 115, 115, 0.87);
+}
+.form :focus::-moz-placeholder {
+    color: rgba(115, 115, 115, 0.87);
+}
+.form .checkbox {
+    position: relative;
+    display: inline-block;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    outline: 0;
+    min-height: 17px;
+    line-height: 17px;
+    min-width: 17px;
+}
+.form .checkbox input[type=checkbox], .form .checkbox input[type=radio] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 17px;
+    height: 17px;
+}
+.form .checkbox label {
+    position: relative;
+    display: block;
+    padding-left: 1.85em;
+    outline: 0;
+    font-size: .9rem;
+    cursor: pointer;
+    color: rgba(0,0,0,.95);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.form .checkbox label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    background-color: #fff;
+    border-radius: .21rem;
+    border: 1px solid #d4d4d5;
+    webkit-transition: border .1s ease,opacity .1s ease;
+    transition: border .1s ease,opacity .1s ease;
+}
+.form .checkbox.radio label:before {
+    border-radius: 50%;
+}
+.form .checkbox label:hover {
+    color: rgba(0,0,0,.8);
+}
+.form .checkbox label:hover:before {
+    background-color: #fff;
+    border-color: rgba(34,36,38,.35);
+}
+.form .checkbox input[type=checkbox]:checked + label:after,
+.form .checkbox input[type=radio]:checked + label:after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0,0,0,.85);
+}
+.form .checkbox input[type=checkbox]:checked + label:after {
+    left: 4px;
+    top: 8px;
+    width: 3px;
+    height: 3px;
+    -webkit-box-shadow: 2px 0 0 rgba(0,0,0,.85), 4px 0 0 rgba(0,0,0,.85), 4px -2px 0 rgba(0,0,0,.85), 4px -4px 0 rgba(0,0,0,.85), 4px -6px 0 rgba(0,0,0,.85), 4px -8px 0 rgba(0,0,0,.85);
+    box-shadow: 2px 0 0 rgba(0,0,0,.85), 4px 0 0 rgba(0,0,0,.85), 4px -2px 0 rgba(0,0,0,.85), 4px -4px 0 rgba(0,0,0,.85), 4px -6px 0 rgba(0,0,0,.85), 4px -8px 0 rgba(0,0,0,.85);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);   
+}
+.form .checkbox input[type=radio]:checked + label:after {
+    left: 6px;
+    top: 6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
