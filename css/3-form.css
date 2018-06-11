@@ -40,6 +40,7 @@
     vertical-align: middle;
     outline: 0;
     -webkit-appearance: none;
+    appearance: none;
     line-height: 1.2;
     padding: .5rem 1rem;
     background-color: #fff;
@@ -126,7 +127,7 @@
     background-color: #fff;
     border-radius: .21rem;
     border: 1px solid #d4d4d5;
-    webkit-transition: border .1s ease,opacity .1s ease;
+    -webkit-transition: border .1s ease,opacity .1s ease;
     transition: border .1s ease,opacity .1s ease;
 }
 .form .checkbox.radio label:before {
@@ -163,5 +164,5 @@
     border-radius: 50%;
 }
 /*--------------------
-        Invalid
+        Validation
 ---------------------*/
