@@ -83,6 +83,24 @@
 .form :focus::-moz-placeholder {
     color: rgba(115, 115, 115, 0.87);
 }
+.form .field.invalid ::-webkit-input-placeholder {
+    color: #e7bdbc;
+}
+.form .field.invalid :-ms-input-placeholder {
+    color: #e7bdbc !important;
+}
+.form .field.invalid ::-moz-placeholder {
+    color: #e7bdbc;
+}
+.form .field.invalid :focus::-webkit-input-placeholder {
+    color: #da9796;
+}
+.form .field.invalid :focus:-ms-input-placeholder {
+    color: #da9796 !important;
+}
+.form .field.invalid :focus::-moz-placeholder {
+    color: #da9796;
+}
 /*--------------------
         Checkbox
 ---------------------*/
@@ -140,6 +158,11 @@
     background-color: #fff;
     border-color: rgba(34,36,38,.35);
 }
+.form .checkbox input[type=checkbox]:focus + label:before,
+.form .checkbox input[type=radio]:focus + label:before {
+    background-color: #fff;
+    border-color: #96c8da;
+}
 .form .checkbox input[type=checkbox]:checked + label:after,
 .form .checkbox input[type=radio]:checked + label:after {
     content: '';
@@ -166,3 +189,66 @@
 /*--------------------
         Validation
 ---------------------*/
+.form .field.invalid label {
+    color: #9f3a38;
+}
+.form .field.invalid input:not([type]), .form .field.invalid input[type=date], .form .field.invalid input[type=datetime-local], .form .field.invalid input[type=email], .form .field.invalid input[type=file], .form .field.invalid input[type=number], .form .field.invalid input[type=password], .form .field.invalid input[type=search], .form .field.invalid input[type=tel], .form .field.invalid input[type=text], .form .field.invalid input[type=time], .form .field.invalid input[type=url] {
+    background-color: #fff6f6;
+    border-color: #e0b4b4;
+    color: #9f3a38;
+}
+.form .field.invalid .checkbox label {
+    color: #9f3a38;
+}
+.form .field.invalid .checkbox label:before {
+    background-color: #fff6f6;
+    border-color: #e0b4b4;
+}
+/*-------------------------
+        Validation message
+---------------------------*/
+.form .message {
+    position: relative;
+    font-size: .85rem;
+    margin: 1rem 0;
+    background-color: #f8f8f8;
+    padding: 1rem 1.5rem;
+    line-height: 1.45;
+    color: rgba(0,0,0,.85);
+    -webkit-transition: opacity .1s ease;
+    transition: opacity .1s ease;
+    border-radius: .28rem;
+    -webkit-box-shadow: 0 0 0 1px rgba(34,36,38,.22) inset, 0 0 0 0 transparent;
+    box-shadow: 0 0 0 1px rgba(34,36,38,.22) inset, 0 0 0 0 transparent;
+}
+.form .message.error {
+    background-color: #fff6f6;
+    color: #9f3a38;
+    -webkit-box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
+    box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
+}
+.form .message.success {
+    background-color: #fcfff5;
+    color: #2c662d;
+    -webkit-box-shadow: 0 0 0 1px #a3c293 inset, 0 0 0 0 transparent;
+    box-shadow: 0 0 0 1px #a3c293 inset, 0 0 0 0 transparent;
+}
+.form .message .title {
+    font-weight: 700;
+    margin-bottom: .75rem;
+    font-size: .85rem;
+}
+.form .message li {
+    position: relative;
+    list-style-type: none;
+    margin: 0 0 .3rem 1rem;
+    padding: 0;
+}
+.form .message li:before {
+    position: absolute;
+    content: '•';
+    left: -1rem;
+    top: -1px;
+    height: 100%;
+    vertical-align: baseline;
+}
