@@ -1,3 +1,6 @@
+/*--------------------
+        Ribbon
+---------------------*/
 .ribbon {
     width: 160px;
     height: 30px;
@@ -44,6 +47,9 @@
 .ribbon.green:after {
     border-left: 15px solid #28a745;
 }
+/*--------------------
+        Small ribbon
+---------------------*/
 .ribbon.small {
     width: 85px;
     height: 18px;

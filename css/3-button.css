@@ -1,3 +1,6 @@
+/*--------------------
+        Button
+---------------------*/
 .btn {
     display: inline-block;
     font-weight: 700;
@@ -32,6 +35,9 @@
     background-color: #343637;
     color: #fff;
 }
+/*--------------------
+        Primary
+---------------------*/
 .btn.primary {
     background-color: #2185d0;
     color: #fff;
@@ -44,6 +50,9 @@
     background-color: #1a69a4;
     color: #fff;
 }
+/*--------------------
+        Success
+---------------------*/
 .btn.success {
     background-color: #21ba45;
     color: #fff;
@@ -56,6 +65,9 @@
     background-color: #198f35;
     color: #fff;
 }
+/*--------------------
+        Danger
+---------------------*/
 .btn.danger {
     background-color: #dc3545;
     color: #fff;
@@ -68,6 +80,9 @@
     background-color: #bd2130;
     color: #fff;
 }
+/*--------------------
+        Info
+---------------------*/
 .btn.info {
     background-color: #17a2b8;
     color: #fff;

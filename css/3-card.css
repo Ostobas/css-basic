@@ -1,3 +1,6 @@
+/*--------------------
+        Card
+---------------------*/
 .card {
     position: relative;
     display: -ms-flexbox;
@@ -21,6 +24,9 @@
 .card.large {
     max-width: 580px;
 }
+/*---------------------
+        Card bordering
+-----------------------*/
 .card .header {
     border-bottom: 1px solid rgba(0,0,0,.2);
 }
@@ -31,6 +37,9 @@
     border: none;
     margin: 0;
 }
+/*----------------------
+        Card structure
+------------------------*/
 .card .header, .card .body, .card .footer {
     display: -ms-flexbox;
     display: flex;
@@ -38,6 +47,9 @@
     padding: .65rem 0;
     margin: 0 1rem;
 }
+/*--------------------
+        Header
+---------------------*/
 .card .header.center {
     justify-content: center;
 }
@@ -54,6 +66,9 @@
     width: 35px;
     height: 35px;
 }
+/*--------------------
+        Body
+---------------------*/
 .card .body {
     flex-direction: column;
     -ms-flex-direction: column;
@@ -70,6 +85,9 @@
     margin-bottom: .5rem;
     width: 100%;
 }
+/*--------------------
+        Footer
+---------------------*/
 .card .footer {
     justify-content: space-between;
 }
@@ -77,12 +95,18 @@
     flex-direction: column;
     -ms-flex-direction: column;
 }
+/*--------------------
+        Image
+---------------------*/
 .card .image {
     width: 100%;
 }
 .card .image + .content {
     font-size: 80%;
 }
+/*--------------------
+        Card deck
+---------------------*/
 .card-deck {
     display: -ms-flexbox;
     display: flex;

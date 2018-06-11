@@ -1,3 +1,6 @@
+/*--------------------
+        Footer
+---------------------*/
 footer.footer, #footer.footer {
     background-color: #525d6b;
     color: #fff;
@@ -17,21 +20,24 @@ footer.footer ul, #footer.footer ul {
 footer.footer ul > li, #footer.footer ul > li {
     margin-bottom: .2rem;
 }
-footer.footer a:hover, #footer.footer a:hover {
-    color: #fff;
-}
 footer.footer ul > li i, #footer.footer ul > li i {
     margin-right: .5rem;
 }
+footer.footer a:hover, #footer.footer a:hover {
+    color: #fff;
+}
+@media screen and (min-width: 768px) {
+    footer.footer, #footer.footer, footer.footer ul, #footer.footer ul {
+        text-align: left;
+    }
+}
+/*--------------------
+        Bottom
+---------------------*/
 footer.footer .bottom, #footer.footer .bottom {
     font-size: 65%;
 }
 footer.footer .bottom .divider, #footer.footer .bottom .divider {
     margin-right: .5rem;
     margin-left: .5rem;
-}
-@media screen and (min-width: 768px) {
-    footer.footer, #footer.footer, footer.footer ul, #footer.footer ul {
-        text-align: left;
-    }
 }

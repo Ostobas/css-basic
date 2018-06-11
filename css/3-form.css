@@ -1,3 +1,6 @@
+/*--------------------
+        Form
+---------------------*/
 .form {
     position: relative;
     max-width: 100%;
@@ -6,6 +9,9 @@
 .form.small {
     max-width: 420px;
 }
+/*--------------------
+        Field
+---------------------*/
 .form .field {
     clear: both;
     margin-bottom: 1rem;
@@ -21,6 +27,14 @@
     font-weight: 700;
     text-transform: none;
 }
+.form .field small {
+    display: block;
+    color: rgba(0,0,0,.5);
+    margin-top: .35rem;
+}
+/*--------------------
+        Inputs
+---------------------*/
 .form input:not([type]), .form input[type=date], .form input[type=datetime-local], .form input[type=email], .form input[type=file], .form input[type=number], .form input[type=password], .form input[type=search], .form input[type=tel], .form input[type=text], .form input[type=time], .form input[type=url] {
     width: 100%;
     vertical-align: middle;
@@ -47,11 +61,9 @@
 .form [type=submit] {
     margin-top: 1rem;
 }
-.form .field small {
-    display: block;
-    color: rgba(0,0,0,.5);
-    margin-top: .35rem;
-}
+/*--------------------
+        Placeholder
+---------------------*/
 .form ::-webkit-input-placeholder {
     color: rgba(191, 191, 191, 0.87);
 }
@@ -70,6 +82,9 @@
 .form :focus::-moz-placeholder {
     color: rgba(115, 115, 115, 0.87);
 }
+/*--------------------
+        Checkbox
+---------------------*/
 .form .checkbox {
     position: relative;
     display: inline-block;
@@ -147,3 +162,6 @@
     height: 7px;
     border-radius: 50%;
 }
+/*--------------------
+        Invalid
+---------------------*/

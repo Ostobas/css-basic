@@ -1,3 +1,6 @@
+/*--------------------
+        Modal
+---------------------*/
 .modal {
     display: none;
     position: fixed;
@@ -11,6 +14,9 @@
 .modal.active {
     display: block;
 }
+/*--------------------
+        Dimmer
+---------------------*/
 .modal .dimmer {
     display: -ms-flexbox;
     display: flex;
@@ -23,6 +29,9 @@
     transition: .125s opacity ease-out;
     background-color: rgba(0,0,0,.8);
 }
+/*--------------------
+        Window
+---------------------*/
 .modal .window {
     position: relative;
     top: 10%;
@@ -44,9 +53,15 @@
 .modal.large .window {
     max-width: 800px;
 }
+/*----------------------
+        Window structure
+------------------------*/
 .modal .header, .modal .body, .modal .footer {
     padding: 1rem;
 }
+/*--------------------
+        Header
+---------------------*/
 .modal .header {
     display: -ms-flexbox;
     display: flex;
@@ -67,16 +82,25 @@
     cursor: pointer;
     padding: 0 .5rem;
 }
+/*--------------------
+        Body
+---------------------*/
 .modal .body {
     max-height: 550px;
     overflow: auto;
 }
+/*--------------------
+        Footer
+---------------------*/
 .modal .footer {
     display: -ms-flexbox;
     display: flex;
     justify-content: space-between;
     border-top: 1px solid rgba(0,0,0,.2);
 }
+/*--------------------
+        Animations
+---------------------*/
 .modal.active .window {
     opacity: 1;
     transform: translateY(0);
