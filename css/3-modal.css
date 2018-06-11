@@ -36,6 +36,7 @@
     border-radius: .275rem;
     transform: translateY(-100vh);
     opacity: 0;
+    cursor: auto;
 }
 .modal.small .window{
     max-width: 380px;
@@ -52,6 +53,9 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(0,0,0,.2);
 }
+.modal .header.center {
+    justify-content: center;
+}
 .modal .title {
     font-size: 1.2rem;
     font-weight: 700;
@@ -64,7 +68,7 @@
     padding: 0 .5rem;
 }
 .modal .body {
-    max-height: 400px;
+    max-height: 550px;
     overflow: auto;
 }
 .modal .footer {

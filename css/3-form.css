@@ -10,6 +10,9 @@
     clear: both;
     margin-bottom: 1rem;
 }
+.form .field.center {
+    text-align: center;
+}
 .form .field > label {
     display: block;
     margin-bottom: .25rem;
@@ -41,9 +44,12 @@
     -webkit-box-shadow: 0 0 0 0 rgba(34,36,38,.35) inset;
     box-shadow: 0 0 0 0 rgba(34,36,38,.35) inset;
 }
+.form [type=submit] {
+    margin-top: 1rem;
+}
 .form .field small {
     display: block;
-    color: #6c757d;
+    color: rgba(0,0,0,.5);
     margin-top: .35rem;
 }
 .form ::-webkit-input-placeholder {

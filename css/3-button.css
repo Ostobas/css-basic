@@ -21,7 +21,9 @@
     color: #fff;
     background-color: #1b1c1d;
 }
-
+.btn.wide {
+    min-width: 200px;
+}
 .btn:hover {
     background-color: #27292a;
     color: #fff;
