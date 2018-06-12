@@ -95,3 +95,18 @@
     background-color: #117a8b;
     color: #fff;
 }
+/*--------------------
+        Info
+---------------------*/
+.btn.banana {
+    background-color: #f8d347;
+    color: #181507;
+}
+.btn.banana:hover {
+    background-color: #dfbd3f;
+    color: #181507;
+}
+.btn.banana:active {
+    background-color: #c6a838;
+    color: #181507;
+}

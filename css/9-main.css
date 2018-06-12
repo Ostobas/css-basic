@@ -52,7 +52,8 @@ h6 { font-size: 1rem; }
 .info.light {
   color: #edeef0;
 }
-.info + .btn, .small + .btn {
+.info + .btn, .small + .btn,
+ .info + a > .btn, .small + a > .btn {
   margin-top: 1rem;
 }
 .important {

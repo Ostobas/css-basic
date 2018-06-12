@@ -1,4 +1,5 @@
 (function() {
+    
     function addModalOpenListeners() {
         // Search all the element with the data-target, that's how the user can identify, witch button opens witch modal.
         // For e.: data-target="#myModal"

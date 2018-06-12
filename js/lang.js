@@ -19,13 +19,12 @@ var lang = {
             self = this,
             lang = self.language
         
-            document.querySelectorAll('[data-text]')
+        document.querySelectorAll('[data-text]')
         .forEach(function(selector) {
             textID = selector.dataset.text
             text = self[lang][textID]
             selector.textContent = text
         })
-
     },
 
     changeLanguage: function(language) {
