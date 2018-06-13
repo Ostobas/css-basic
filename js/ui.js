@@ -17,10 +17,10 @@
             // obj parameters:
             // content: html text - required
             // type: 'success' || 'danger' - optional
-            // removeTime: after that the alert will be removed (ms) - optional
+            // time: after that the alert will be removed (ms) - optional
 
             // Set the default params
-            var removeTime = obj.removeTime || 3000
+            var time = obj.time || 3000
             var alertDeck
             var self = this
 
@@ -55,7 +55,7 @@
             // Remove after a given time
             setTimeout(function () {
                 self.removeAlert(alert)
-            }, removeTime)
+            }, time)
 
             return alert
         },
@@ -72,10 +72,11 @@
                 Form validation
         -------------------------*/
 
-        form: function (form, validator, callback = function () {}) {
+        form: function (form, validator, callback) {
             // Set an event listener on submit and when the user submits the form,
             // calls the callback function, which gets the parameters of the results
             var self = this
+            var callback = callback || function(){}
             document.querySelector(form)
                 .addEventListener('submit', function (e) {
                     e.preventDefault()
@@ -334,8 +335,9 @@
                 Collapse
         -------------------------*/
 
-        toggleCollapse: function (collapse, time = 300) {
-            var collapse = collapse || document.querySelector('.nav .collapse')
+        toggleCollapse: function (collapse, time) {
+            var collapse = collapse || document.querySelector('.nav .collapse'),
+                time = time || 300
             // Decide if we have to close or open the collapse.
             if (collapse.classList.contains('active')) {
                 this.closeCollapse(collapse, time)
@@ -344,10 +346,12 @@
             }
         },
 
-        closeCollapse: function (collapse, time = 300) {
+        closeCollapse: function (collapse, time) {
+            var collapse = collapse || document.querySelector('.nav .collapse'),
+                time = time || 300
+            
             // The height is dynamic, so first of all it has to be removed, for a nice transition effect.
             this.removeHeight()
-            var collapse = collapse || document.querySelector('.nav .collapse')
             collapse.classList.add('collapsing')
             // Async remove the active and collapsing class, so the transition effects can be seen.
             setTimeout(function () {
@@ -358,9 +362,10 @@
             }, time)
         },
 
-        openCollapse: function (collapse, time = 300) {
-            var self = this
-            var collapse = collapse || document.querySelector('.nav .collapse')
+        openCollapse: function (collapse, time) {
+            var self = this,
+                collapse = collapse || document.querySelector('.nav .collapse'),
+                time = time || 300
             // We have to use two classes basically. One for during the transition (collapsing), and the other for the final position (active).
             collapse.classList.add('collapsing')
             // Async add the classes, cause of animation purposes.

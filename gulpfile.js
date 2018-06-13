@@ -22,7 +22,9 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
     return gulp.src('js/ui.js')
-        .pipe(uglify())
+        .pipe(uglify().on('error', function(e){
+            console.log(e)
+        }))
         .pipe(gulp.dest('build'))
 })
 
