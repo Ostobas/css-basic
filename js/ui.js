@@ -23,6 +23,7 @@
             var time = obj.time || 3000
             var alertDeck
             var self = this
+            var contentText = obj.content || obj
 
             // Create main alert
             var alert = document.createElement('div')
@@ -31,7 +32,7 @@
             // Create content
             var content = document.createElement('div')
             content.className = 'content'
-            content.innerHTML = obj.content
+            content.innerHTML = contentText
             alert.appendChild(content)
 
             // Find the alert deck

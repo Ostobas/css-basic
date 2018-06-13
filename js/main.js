@@ -1,6 +1,7 @@
 var ui = ui()
 
 // Creating an alert
+// ui.alert('With just plain text')
 // ui.alert({
 //     content: 'I am a UI alert!',
 //     type: 'success',    // optional
