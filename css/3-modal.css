@@ -85,17 +85,17 @@
     max-height: 500px;
     overflow: auto;
 }
-@media (min-width: 576px) {
+@media (min-width: 576px) and (min-height: 700px) {
     .modal .body {
         max-height: 620px;
     }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 730px) {
     .modal .body {
         max-height: 650px;
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (min-height: 830px) {
     .modal .body {
         max-height: 750px;
     }
