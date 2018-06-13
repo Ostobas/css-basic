@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/3-modal.css">
     <link rel="stylesheet" href="./css/3-ribbon.css">
     <link rel="stylesheet" href="./css/9-main.css">
+    <!-- <link rel="stylesheet" href="./build/ui.min.css"> -->
     <style>
         .box {
             background-color: orange;
@@ -95,19 +96,19 @@
 
     <section id="forms">
         <div class="container">
-            <form class="form small">
-                <div class="field invalid">
+            <form id="loginForm" class="form small">
+                <div class="field">
                     <label>Email address</label>
                     <input type="email" name="email" placeholder="myname@example.com">
                 </div>
-                <div class="field invalid">
+                <div class="field">
                     <label>Password</label>
                     <input type="password" name="password">
                     <small><a href="#">Forgot password?</a></small>
                 </div>
-                <div class="field invalid">
+                <div class="field">
                     <div class="checkbox">
-                        <input type="checkbox" id="myCheckbox">
+                        <input type="checkbox" id="myCheckbox" name="privacy">
                         <label for="myCheckbox">I agree to the <a>Terms and Conditions</a></label>
                     </div>
                 </div>
@@ -128,14 +129,14 @@
                     </div>
                 </div>
                 <button class="btn" type="submit">Login</button>
-                <div class="message error">
+                <!-- <div class="message error">
                     <div class="title">Oops! Something went wrong!</div>
                     <ul>
                         <li>Please enter a username</li>
                         <li>Please enter a password</li>
                         <li>You must agree to the terms and conditions</li>
                     </ul>
-                </div>
+                </div> -->
             </form>
         </div>
     </section>
@@ -378,17 +379,19 @@
     </div>
 </footer>
 
-    <!-- <section class="cookie-banner dark">
+    <!-- <section class="cookie-banner">
         <div class="container">
             <div class="content">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a>Terms and conditions.</a></div>
             <button class="btn banana">Accept</button>
         </div>
     </section> -->
 
-    <script src="./js/alert.js" type="text/javascript"></script>
+    <!-- <script src="./js/alert.js" type="text/javascript"></script> -->
     <script src="./js/nav.js" type="text/javascript"></script>
     <script src="./js/modal.js" type="text/javascript"></script>
-    <script src="./js/form.js" type="text/javascript"></script>
+    <!-- <script src="./js/form.js" type="text/javascript"></script> -->
     <script src="./js/lang.js" type="text/javascript"></script>
+    <script src="./js/ui.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
 </body>
 </html>
