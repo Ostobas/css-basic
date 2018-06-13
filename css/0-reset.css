@@ -60,7 +60,7 @@ table {
 small {
     font-size: 80%;
 }
-strong {
+strong, b {
     font-weight: 700;
 }
 button {

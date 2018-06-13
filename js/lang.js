@@ -39,6 +39,10 @@ var lang = {
             this.language = 'hu'
         }
         this.init()
+        createAlert({
+            content: 'Language has changed successfully!',
+            type: 'success'
+        })
     }
 }
 
