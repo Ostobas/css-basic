@@ -35,12 +35,12 @@
             // Set up the event listeners.
             toggle.addEventListener('click', function() {
                 // Give it a time paramater, which has to be in sync with the css transition effects.
-                toggleCollapse(300)
+                toggleCollapse()
             })
         })
     }
 
-    function toggleCollapse(time) {
+    function toggleCollapse(time = 300) {
         // Decide if we have to close or open the collapse.
         if (collapse.classList.contains('active')) {
             closeCollapse(time)
@@ -49,7 +49,7 @@
         }
     }
 
-    function closeCollapse(time) {
+    function closeCollapse(time = 300) {
         // The height is dynamic, so first of all it has to be removed, for a nice transition effect.
         removeHeight()
         collapse.classList.add('collapsing')
@@ -62,7 +62,7 @@
         }, time)
     }
 
-    function openCollapse(time) {
+    function openCollapse(time = 300) {
         // We have to use two classes basically. One for during the transition (collapsing), and the other for the final position (active).
         collapse.classList.add('collapsing')
         // Async add the classes, cause of animation purposes.

@@ -1,11 +1,11 @@
 var ui = ui()
 
 // Creating an alert
-ui.alert({
-    content: 'I am a UI alert!',
-    type: 'success',    // optional
-    removeTime: 4500    // optional
-})
+// ui.alert({
+//     content: 'I am a UI alert!',
+//     type: 'success',    // optional
+//     removeTime: 4500    // optional
+// })
 
 // Setup the form validation
 // 1. form ID
@@ -48,3 +48,13 @@ function callback(result) {
         })
     }
 }
+
+// Open / Close modal with funcion
+// ui.openModal('#myModal')
+// ui.closeModal('#myModal')
+
+// Open / Close collapse menu
+// ui.openCollapse()
+// ui.closeCollapse()
+
+document.querySelector('.link')
