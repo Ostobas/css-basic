@@ -3,9 +3,7 @@
 ---------------------*/
 .card {
     position: relative;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
     flex-direction: column;
     justify-content: space-between;
     min-width: 0;
@@ -41,7 +39,6 @@
         Card structure
 ------------------------*/
 .card .header, .card .body, .card .footer {
-    display: -ms-flexbox;
     display: flex;
     align-items: center;
     padding: .65rem 0;
@@ -71,7 +68,6 @@
 ---------------------*/
 .card .body {
     flex-direction: column;
-    -ms-flex-direction: column;
     align-items: flex-start;
     text-align: justify;
     min-height: 150px;
@@ -93,7 +89,6 @@
 }
 .card .footer.column {
     flex-direction: column;
-    -ms-flex-direction: column;
 }
 /*--------------------
         Image
@@ -108,9 +103,7 @@
         Card deck
 ---------------------*/
 .card-deck {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
     flex-direction: column;
 }
 .card-deck .card {
@@ -119,7 +112,6 @@
 }
 @media (min-width: 576px) {
     .card-deck {
-        -ms-flex-flow: row wrap;
         flex-flow: row wrap;
         margin-left: -.5rem;
         margin-right: -.5rem;

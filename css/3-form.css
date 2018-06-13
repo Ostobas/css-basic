@@ -39,7 +39,6 @@
     width: 100%;
     vertical-align: middle;
     outline: 0;
-    -webkit-appearance: none;
     appearance: none;
     line-height: 1.2;
     padding: .5rem 1rem;
@@ -47,16 +46,13 @@
     color: rgba(0,0,0,.85);
     border: 1px solid rgba(34,36,38,.15);
     border-radius: .28rem;
-    -webkit-box-shadow: 0 0 0 0 transparent inset;
     box-shadow: 0 0 0 0 transparent inset;
-    -webkit-transition: color .1s ease,border-color .1s ease;
     transition: color .1s ease,border-color .1s ease;
 }
 .form input:not([type]):focus, .form input[type=date]:focus, .form input[type=datetime-local]:focus, .form input[type=email]:focus, .form input[type=file]:focus, .form input[type=number]:focus, .form input[type=password]:focus, .form input[type=search]:focus, .form input[type=tel]:focus, .form input[type=text]:focus, .form input[type=time]:focus, .form input[type=url]:focus {
     color: rgba(0,0,0,.95);
     border-color: #85b7d9;
     background-color: #fff;
-    -webkit-box-shadow: 0 0 0 0 rgba(34,36,38,.35) inset;
     box-shadow: 0 0 0 0 rgba(34,36,38,.35) inset;
 }
 .form [type=submit] {
@@ -65,41 +61,17 @@
 /*--------------------
         Placeholder
 ---------------------*/
-.form ::-webkit-input-placeholder {
+.form ::placeholder {
     color: rgba(191, 191, 191, 0.87);
 }
-.form :-ms-input-placeholder {
-    color: rgba(191, 191, 191, 0.87);
-}
-.form ::-moz-placeholder {
-    color: rgba(191, 191, 191, 0.87);
-}
-.form :focus::-webkit-input-placeholder {
+.form :focus::placeholder {
     color: rgba(115, 115, 115, 0.87);
 }
-.form :focus:-ms-input-placeholder {
-    color: rgba(115, 115, 115, 0.87);
-}
-.form :focus::-moz-placeholder {
-    color: rgba(115, 115, 115, 0.87);
-}
-.form .field.invalid ::-webkit-input-placeholder {
-    color: #e7bdbc;
-}
-.form .field.invalid :-ms-input-placeholder {
+.form .field.invalid ::placeholder {
     color: #e7bdbc !important;
 }
-.form .field.invalid ::-moz-placeholder {
-    color: #e7bdbc;
-}
-.form .field.invalid :focus::-webkit-input-placeholder {
-    color: #da9796;
-}
-.form .field.invalid :focus:-ms-input-placeholder {
+.form .field.invalid :focus::placeholder {
     color: #da9796 !important;
-}
-.form .field.invalid :focus::-moz-placeholder {
-    color: #da9796;
 }
 /*--------------------
         Checkbox
@@ -107,7 +79,6 @@
 .form .checkbox {
     position: relative;
     display: inline-block;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     outline: 0;
     min-height: 17px;
@@ -130,9 +101,6 @@
     font-size: .9rem;
     cursor: pointer;
     color: rgba(0,0,0,.95);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 .form .checkbox label:before {
@@ -145,7 +113,6 @@
     background-color: #fff;
     border-radius: .21rem;
     border: 1px solid #d4d4d5;
-    -webkit-transition: border .1s ease,opacity .1s ease;
     transition: border .1s ease,opacity .1s ease;
 }
 .form .checkbox.radio label:before {
@@ -174,9 +141,7 @@
     top: 8px;
     width: 3px;
     height: 3px;
-    -webkit-box-shadow: 2px 0 0 rgba(0,0,0,.85), 4px 0 0 rgba(0,0,0,.85), 4px -2px 0 rgba(0,0,0,.85), 4px -4px 0 rgba(0,0,0,.85), 4px -6px 0 rgba(0,0,0,.85), 4px -8px 0 rgba(0,0,0,.85);
     box-shadow: 2px 0 0 rgba(0,0,0,.85), 4px 0 0 rgba(0,0,0,.85), 4px -2px 0 rgba(0,0,0,.85), 4px -4px 0 rgba(0,0,0,.85), 4px -6px 0 rgba(0,0,0,.85), 4px -8px 0 rgba(0,0,0,.85);
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);   
 }
 .form .checkbox input[type=radio]:checked + label:after {
@@ -215,22 +180,18 @@
     padding: 1rem 1.5rem;
     line-height: 1.45;
     color: rgba(0,0,0,.85);
-    -webkit-transition: opacity .1s ease;
     transition: opacity .1s ease;
     border-radius: .28rem;
-    -webkit-box-shadow: 0 0 0 1px rgba(34,36,38,.22) inset, 0 0 0 0 transparent;
     box-shadow: 0 0 0 1px rgba(34,36,38,.22) inset, 0 0 0 0 transparent;
 }
 .form .message.error {
     background-color: #fff6f6;
     color: #9f3a38;
-    -webkit-box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
     box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
 }
 .form .message.success {
     background-color: #fcfff5;
     color: #2c662d;
-    -webkit-box-shadow: 0 0 0 1px #a3c293 inset, 0 0 0 0 transparent;
     box-shadow: 0 0 0 1px #a3c293 inset, 0 0 0 0 transparent;
 }
 .form .message .title {

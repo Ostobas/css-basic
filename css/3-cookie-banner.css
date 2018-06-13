@@ -10,20 +10,17 @@
     padding: .5rem 1rem;
     font-weight: 700;
     opacity: 1;
-    display: -ms-flexbox;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(100, 88, 98, .9);
     color: #fff;
-    -webkit-transition: .25s opacity ease-out;
     transition: .15s opacity ease-out;
 }
 .cookie-banner.removing {
     opacity: 0;
 }
 .cookie-banner > .container {
-    display: -ms-flexbox;
     display: flex;
     justify-content: space-between;
     align-items: center;

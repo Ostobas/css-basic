@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifyCSS = require('gulp-clean-css'),
+    cleanCSS = require('gulp-clean-css'),
     concatCss = require('gulp-concat-css'),
     uglify = require('gulp-uglify'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -13,8 +13,8 @@ gulp.task('clean', function() {
 gulp.task('css', function() {
     return gulp.src('css/**/*.css')
         .pipe(sourcemaps.init())
-        .pipe(concatCss('ui.min.css'))
         .pipe(autoprefixer('last 2 version'))
+        .pipe(concatCss('ui.min.css'))
         .pipe(cleanCSS())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('build'))
