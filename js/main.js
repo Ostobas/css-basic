@@ -27,9 +27,18 @@ ui.form('#loginForm', [
     },
     {
         name: 'password',
-        rules: [{
+        rules: [
+        {
             type: 'required',
             message: 'Please enter a password!'
+        },
+        {
+            type: 'minLength(6)',
+            message: 'The password must be at least 6 characters long.'
+        },
+        {
+            type: 'maxLength(12)',
+            message: 'The password must be maximum 12 characters long.'
         }]
     },
     {

@@ -94,7 +94,7 @@
 
             var
                 fieldValue, fieldName,
-                ruleType, ruleMsg, numbOfRules, result,
+                ruleType, ruleMsg, numbOfRules, result, num,
                 errorList = [],
                 invalidFieldList = [],
                 validFields = [],
@@ -124,25 +124,41 @@
                 // Go throw the array of rules, in case of the current field
                 numbOfRules = validator[i].rules.length
                 for (j = 0; j < numbOfRules; j++) {
-                    // Get the type of rule and error massage
-                    ruleType = validator[i].rules[j].type
+                    
+                    // Get the error message of the rule
                     ruleMsg = validator[i].rules[j].message
+                    
+                    // Get the rule type
+                    ruleType = validator[i].rules[j].type
+                    // Get the number from the rule
+                    num = Number(ruleType.match(/\w+/g)[1]) || 0
+                    // Transform the ruletype to just text
+                    ruleType = ruleType.match(/\w+/g)[0]
 
                     // Validate the value of the input field, based on the rule
                     switch (ruleType) {
 
                         case 'required':
-                            // Check if the value is empty or false
+                            // Check if the value is empty or false. If empty the result should be TRUE
                             result = !isEmpty(fieldValue)
                             break
 
                         case 'validEmail' :
-                            // Check if the email is valid
-                            result =  isValidEmail(fieldValue)
+                            // Check if the email is valid. If the email is valid, result should be TRUE
+                            result = isValidEmail(fieldValue)
+                            break
+                        
+                        case 'minLength' :
+                            // Check if the value is long enough. If its shorter than the given vale result should be FALSE
+                            result = !isShort(fieldValue, num)
+                            break
+                    
+                        case 'maxLength' :
+                            result = !isLong(fieldValue, num)
                             break
 
                         default:
-                            console.log('[Error] There is no such rule.')
+                            console.error('[UI] This rule does not exist:', ruleType)
                             break
                     }
                     
@@ -163,6 +179,7 @@
                         // And push the name of the invalid field
                         invalidFieldList.push(fieldName)
                         // There is one error in the rules, so the field is invalid, we dont have to check the other rules for this field.
+                        // Break put from the for loop
                         break
                     }
                 }
@@ -177,6 +194,14 @@
             function isValidEmail(val) {
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(String(val).toLowerCase())
+            }
+
+            function isShort(val, num) {
+                return (val.length < num)
+            }
+
+            function isLong(val, num) {
+                return (val.length > num)
             }
 
             // If there are error messages, the form is invalid. We return false and the error messages.
