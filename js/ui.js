@@ -161,11 +161,6 @@
                             console.error('[UI] This rule does not exist:', ruleType)
                             break
                     }
-                    
-                    // console.log('[fieldName]', fieldName)
-                    // console.log('[ruleType]', ruleType)
-                    // console.log('[result]', result)
-                    // console.log('---------------------------')
 
                     if (result) {
                         // The field is valid, push it tot the valid field list
@@ -323,13 +318,19 @@
             } catch (e) {}
             // In every case open the modal with the given ID.
             finally {
+                // Select the modal
+                var modal = document.querySelector(id)
+                // Add the acgive class async, cause of animations
                 setTimeout(function () {
                     try {
-                        document.querySelector(id).classList.add('active')
+                        modal.classList.add('active')
+                        // Find the first input element and give it focus
+                        modal.querySelector('input').focus()
                     } catch (e) {
                         console.error('There is no modal with a given ID:', id)
                     }
                 }, 0)
+
             }
         },
 

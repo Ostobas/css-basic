@@ -100,52 +100,7 @@
 
     <section id="forms">
         <div class="container">
-            <form id="loginForm" class="form small">
-                <div class="field">
-                    <label>Email address</label>
-                    <input type="email" name="email" placeholder="myname@example.com" maxlength="25" minlength="8">
-                </div>
-                <div class="field">
-                    <label>Password</label>
-                    <input type="password" name="password">
-                    <small>
-                        <a href="#">Forgot password?</a>
-                    </small>
-                </div>
-                <div class="field">
-                    <div class="checkbox">
-                        <input type="checkbox" id="myCheckbox" name="privacy">
-                        <label for="myCheckbox">I agree to the
-                            <a>Terms and Conditions</a>
-                        </label>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="checkbox radio">
-                        <input type="radio" name="sameRadioName" id="myRadio1" checked>
-                        <label for="myRadio1">
-                            Male
-                        </label>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="checkbox radio">
-                        <input type="radio" name="sameRadioName" id="myRadio2">
-                        <label for="myRadio2">
-                            Female
-                        </label>
-                    </div>
-                </div>
-                <button class="btn" type="submit">Login</button>
-                <!-- <div class="message error">
-                    <div class="title">Oops! Something went wrong!</div>
-                    <ul>
-                        <li>Please enter a username</li>
-                        <li>Please enter a password</li>
-                        <li>You must agree to the terms and conditions</li>
-                    </ul>
-                </div> -->
-            </form>
+           
         </div>
     </section>
 
@@ -288,13 +243,52 @@
                     <div class="close-icon">&times</div>
                 </div>
                 <div class="body">
-                    <p class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat eligendi odio earum velit minima consectetur
-                        odit sint corporis suscipit ab sapiente in, nulla quidem atque adipisci blanditiis voluptates voluptatem
-                        officia!</p>
-                </div>
-                <div class="footer">
-                    <button class="btn primary">Save</button>
-                    <button class="btn close-btn">Close</button>
+                    <form id="loginForm" class="form">
+                        <div class="field">
+                            <label>Email address</label>
+                            <input type="email" name="email" placeholder="myname@example.com" maxlength="25" minlength="8">
+                        </div>
+                        <div class="field">
+                            <label>Password</label>
+                            <input type="password" name="password">
+                            <small>
+                                <a href="#">Forgot password?</a>
+                            </small>
+                        </div>
+                        <div class="field">
+                            <div class="checkbox">
+                                <input type="checkbox" id="myCheckbox" name="privacy">
+                                <label for="myCheckbox">I agree to the
+                                    <a>Terms and Conditions</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="checkbox radio">
+                                <input type="radio" name="sameRadioName" id="myRadio1" checked>
+                                <label for="myRadio1">
+                                    Male
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="checkbox radio">
+                                <input type="radio" name="sameRadioName" id="myRadio2">
+                                <label for="myRadio2">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn" type="submit">Login</button>
+                        <!-- <div class="message error">
+                            <div class="title">Oops! Something went wrong!</div>
+                            <ul>
+                                <li>Please enter a username</li>
+                                <li>Please enter a password</li>
+                                <li>You must agree to the terms and conditions</li>
+                            </ul>
+                        </div> -->
+                    </form>
                 </div>
             </div>
         </div>
