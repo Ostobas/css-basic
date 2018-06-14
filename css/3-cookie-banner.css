@@ -32,5 +32,5 @@
     color: #f8d347;
 }
 .cookie-banner .content + .btn {
-    padding-left: .75rem;
+    margin-left: 1rem;
 }

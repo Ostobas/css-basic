@@ -408,6 +408,102 @@
                 }
             }
             return siblingList
+        },
+
+        /*-----------------------
+                Cookie functions
+        -------------------------*/
+
+        cookie: function(obj) {
+            // Default values
+            var name = obj.name || '',
+                value = obj.value || false,
+                expire = obj.expire || 14
+            // Set the expire date
+            var date = new Date()
+            // Expire time in days, have to turn into milisec
+            date.setTime(date.getTime() + (expire * 1000 * 3600 * 24));
+            var expires = "expires=" + date.toUTCString()
+            document.cookie = name + "=" + value + ";" + expires
+        },
+
+        cookieBanner: function(obj) {
+            // Set up a cookie banner with given parameters
+            var options = {
+                // Give the default values to the obtions
+                name: obj.name || 'cookieAgree',
+                value: obj.value || true,
+                expire: obj.expire || 14,
+                text: obj.text || ''
+            }
+            
+            // Check is the cookie already exist    
+            if(this.isCookieExist(options.name)) {
+                return true
+            } else {
+                this.createCookieBanner(options)
+                return options
+            }
+            
+        },
+
+        isCookieExist: function(name) {
+            // Check if the cookie exist
+            if (document.cookie.split(';').filter(function(item) {
+                return item.indexOf(name + '=') >= 0
+            }).length) {
+                // The cookie exist
+                return true
+            } else {
+                return false
+            }
+        },
+
+        createCookieBanner: function(obj) {
+            var cookie = {
+                name: obj.name || '',
+                value: obj.value || false,
+                expire: obj.expire || 14
+            }
+            var self = this
+
+            // Create the banner div
+            var cookieBanner = document.createElement('div')
+            cookieBanner.classList.add('cookie-banner')
+
+            // Create the container
+            var container = document.createElement('div')
+            container.classList.add('container')
+
+            // Create the content
+            var content = document.createElement('div')
+            content.classList.add('content')
+            content.textContent = obj.text
+            container.appendChild(content)
+
+            // Create the button
+            var btn = document.createElement('button')
+            btn.className = 'btn banana'
+            btn.textContent = 'Accept'
+            container.appendChild(btn)
+
+            // Append the banner to body
+            cookieBanner.appendChild(container)
+            document.querySelector('body').appendChild(cookieBanner)
+
+            // Add the remove banner listener
+            btn.addEventListener('click', function() {
+                self.removeCookieBanner(cookieBanner, cookie)
+            })
+        },
+
+        removeCookieBanner: function(banner, obj) {
+            this.cookie(obj)
+            banner.classList.add('removing')
+            // Timeout because of the animation
+            setTimeout(function() {
+                banner.remove()
+            }, 200)
         }
 
     }

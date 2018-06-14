@@ -22,6 +22,8 @@ function checkCookieAgree() {
     }
 }
 
+checkCookieAgree()
+
 // Create the cookie banner
 function createCookieBanner() {
 

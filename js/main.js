@@ -58,4 +58,20 @@ function callback(result) {
 // ui.openCollapse()
 // ui.closeCollapse()
 
-document.querySelector('.link')
+// Set up the cookie-banner
+ui.cookieBanner({
+    name: 'cookieAgree',    // Optional
+    value: true,            // Optional
+    expire: 14,             // Optional, in days
+    text: 'We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.'
+})
+
+// Create a cookie
+// ui.cookie({
+//     name: 'newCookie',
+//     value: {
+//         content: 'sdljfnskjdbdvsvsdfvsdfvkajbdc',
+//         other: 'sdljnjoienwienc'
+//     },
+//     expire: 1              // Optional, in days
+// })
