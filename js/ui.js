@@ -73,23 +73,28 @@
                 Form validation
         -------------------------*/
 
-        form: function (form, validator, callback) {
+        form: function (id, validator, callback) {
             // Set an event listener on submit and when the user submits the form,
             // calls the callback function, which gets the parameters of the results
             var self = this
             var callback = callback || function(){}
-            document.querySelector(form)
-                .addEventListener('submit', function (e) {
-                    e.preventDefault()
-                    callback(self.validateForm(this, validator))
-                })
+            var form = document.querySelector(id)
+            
+            // Add the novalidation attribute to the form
+            form.setAttribute('novalidate', true)
+            form.addEventListener('submit', function (e) {
+                // Prevent the default validation process
+                e.preventDefault()
+                // Call the callback function when submit happens
+                callback(self.validateForm(this, validator))
+            })
         },
 
         validateForm: function (form, validator) {
 
             var
                 fieldValue, fieldName,
-                ruleType, ruleMsg, numbOfRules,
+                ruleType, ruleMsg, numbOfRules, result,
                 errorList = [],
                 invalidFieldList = [],
                 validFields = [],
@@ -125,28 +130,54 @@
 
                     // Validate the value of the input field, based on the rule
                     switch (ruleType) {
+
                         case 'required':
                             // Check if the value is empty or false
-                            if (fieldValue === '' || fieldValue === false) {
-                                // If the field is empty push the error message
-                                errorList.push(ruleMsg)
-                                // And push the name of the invalid field
-                                invalidFieldList.push(fieldName)
-                            } else {
-                                // The field is valid, push it tot the valid field list
-                                validFields.push({
-                                    name: fieldName,
-                                    value: fieldValue
-                                })
-                            }
+                            result = !isEmpty(fieldValue)
+                            break
+
+                        case 'validEmail' :
+                            // Check if the email is valid
+                            result =  isValidEmail(fieldValue)
                             break
 
                         default:
                             console.log('[Error] There is no such rule.')
                             break
                     }
+                    
+                    // console.log('[fieldName]', fieldName)
+                    // console.log('[ruleType]', ruleType)
+                    // console.log('[result]', result)
+                    // console.log('---------------------------')
+
+                    if (result) {
+                        // The field is valid, push it tot the valid field list
+                        validFields.push({
+                            name: fieldName,
+                            value: fieldValue
+                        })
+                    } else {
+                        // The field is invalid, push the error msg
+                        errorList.push(ruleMsg)
+                        // And push the name of the invalid field
+                        invalidFieldList.push(fieldName)
+                        // There is one error in the rules, so the field is invalid, we dont have to check the other rules for this field.
+                        break
+                    }
                 }
-            } // Went throw the array of rules
+            }
+
+            // Validation rule definitions
+
+            function isEmpty(val) {
+                return (val === '' || val === false)
+            }
+
+            function isValidEmail(val) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(val).toLowerCase())
+            }
 
             // If there are error messages, the form is invalid. We return false and the error messages.
             if (invalidFieldList.length === 0) {
@@ -434,7 +465,7 @@
                 name: obj.name || 'cookieAgree',
                 value: obj.value || true,
                 expire: obj.expire || 14,
-                text: obj.text || ''
+                text: obj.text || obj || ''
             }
             
             // Check is the cookie already exist    

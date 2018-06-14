@@ -15,9 +15,14 @@ var ui = ui()
 ui.form('#loginForm', [
     {
         name: 'email',
-        rules: [{
+        rules: [
+        {
             type: 'required',
             message: 'Please enter an email adress!'
+        },
+        {
+            type: 'validEmail',
+            message: 'Please enter a valid email address!'
         }]
     },
     {
