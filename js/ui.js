@@ -276,37 +276,34 @@
                 target
             // Search all the element with the data-target, that's how the user can identify, witch button opens witch modal.
             // For e.: data-target="#myModal"
-            document.querySelectorAll('[data-target]')
-                .forEach(function (toggler) {
-                    toggler.addEventListener('click', function () {
-                        // target: id of the modal
-                        target = toggler.dataset.target
-                        self.openModal(target)
-                    })
+            [].forEach.call(document.querySelectorAll('[data-target]'), function (toggler) {
+                toggler.addEventListener('click', function () {
+                    // target: id of the modal
+                    target = toggler.dataset.target
+                    self.openModal(target)
                 })
+            })
         },
 
         addModalCloseListeners: function () {
-            var self = this
-            document.querySelectorAll('.modal')
-                .forEach(function (modal) {
-                    // First add the close function to the whole modal, including the dimmer. So the user will close the modal, if clicks outside of it.
-                    modal.addEventListener('click', function () {
-                        self.closeModal('#' + modal.id)
-                    })
-                    // Don't close the modal, when clicking anywhere on the window
-                    modal.querySelector('.window')
-                        .addEventListener('click', function (e) {
-                            e.stopPropagation()
-                        })
-                    // Close the modal when clicking one of the close buttons.
-                    modal.querySelectorAll('.close-icon, .close-btn')
-                        .forEach(function (selector) {
-                            selector.addEventListener('click', function () {
-                                self.closeModal('#' + modal.id)
-                            })
-                        })
+            var self = this;
+            [].forEach.call(document.querySelectorAll('.modal'), function (modal) {
+                // First add the close function to the whole modal, including the dimmer. So the user will close the modal, if clicks outside of it.
+                modal.addEventListener('click', function () {
+                    self.closeModal('#' + modal.id)
                 })
+                // Don't close the modal, when clicking anywhere on the window
+                modal.querySelector('.window')
+                    .addEventListener('click', function (e) {
+                        e.stopPropagation()
+                    });
+                // Close the modal when clicking one of the close buttons.
+                    [].forEach.call(modal.querySelectorAll('.close-icon, .close-btn'), function (selector) {
+                        selector.addEventListener('click', function () {
+                            self.closeModal('#' + modal.id)
+                        })
+                    })
+            })
         },
 
         openModal: function (id) {
@@ -325,7 +322,8 @@
                     try {
                         modal.classList.add('active')
                         // Find the first input element and give it focus
-                        modal.querySelector('input').focus()
+                        var modalInput = modal.querySelector('input')
+                        if (modalInput) modalInput.focus()
                     } catch (e) {
                         console.error('There is no modal with a given ID:', id)
                     }
@@ -351,24 +349,22 @@
                 Navigation
         -------------------------*/
 
-        addNavLinkListeners: function () {
-            var self = this
+        addNavItemListeners: function () {
+            var self = this;
             // Nav link is the anchor tag of the nav item.
-            document.querySelectorAll('.nav .item')
-                .forEach(function (item) {
-                    // Set up the venet listeners.
-                    item.addEventListener('click', function () {
-                        // Set the ITEM active
-                        self.setActive(this)
-                    })
+            [].forEach.call(document.querySelectorAll('.nav .item'), function (item) {
+                // Set up the venet listeners.
+                item.addEventListener('click', function () {
+                    // Set the ITEM active
+                    self.setActive(this)
                 })
+            })
         },
 
         addToggleBtnListener: function () {
-            var self = this
+            var self = this;
             // Opens and closes the collapse part of the nav (on mobile).
-            document.querySelectorAll('.nav .toggle')
-                .forEach(function (toggle) {
+                [].forEach.call(document.querySelectorAll('.nav .toggle'), function (toggle) {
                     // Set up the event listeners.
                     toggle.addEventListener('click', function () {
                         // Give it a time paramater, which has to be in sync with the css transition effects.
@@ -408,6 +404,11 @@
             var collapse = collapse || document.querySelector('.nav .collapse'),
                 time = time || 300
             
+            // If the collapse is not open, just return
+            if (!collapse.classList.contains('active')) {
+                return
+            }
+
             // The height is dynamic, so first of all it has to be removed, for a nice transition effect.
             this.removeHeight()
             collapse.classList.add('collapsing')
@@ -522,7 +523,7 @@
                 value: obj.value || false,
                 expire: obj.expire || 14
             }
-            var self = this
+            var self = this;
 
             // Create the banner div
             var cookieBanner = document.createElement('div')
@@ -572,7 +573,7 @@
         this.addModalCloseListeners()
 
         // Add nav elements listeners
-        this.addNavLinkListeners()
+        this.addNavItemListeners()
         this.addToggleBtnListener()
 
     }
