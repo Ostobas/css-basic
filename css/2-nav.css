@@ -138,13 +138,13 @@ nav.nav {
 /*--------------------
         Colors
 ---------------------*/
-.nav .item, .nav .toggle-icon{
+.nav .item, .nav .toggle-icon, .nav .item-like .link{
     color: rgba(255,255,255,.5);
 }
-.nav .item:hover {
+.nav .item:hover, .nav .item-like:hover .link{
     color: rgba(255,255,255,.75);
 }
-.nav .item.active {
+.nav .item.active, .nav .item-like.active .link{
     color: #fff;
 }
 .nav.light {
@@ -157,13 +157,13 @@ nav.nav {
 .nav.light .toggle-icon {
     color: rgba(0, 0, 0, .7);
 }
-.nav.light .item {
+.nav.light .item, .nav.light .item-like .link {
     color: rgba(0,0,0,.5);
 }
-.nav.light .item:hover {
+.nav.light .item:hover, .nav.light .item-like .link:hover {
     color: rgba(0,0,0,.75);
 }
-.nav.light .item.active {
+.nav.light .item.active, .nav.light .item-like .link.active {
     color: rgba(0,0,0,.9);
 }
 /*--------------------
