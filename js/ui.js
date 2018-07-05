@@ -481,8 +481,8 @@
             var date = new Date()
             // Expire time in days, have to turn into milisec
             date.setTime(date.getTime() + (expire * 1000 * 3600 * 24));
-            var expires = "expires=" + date.toUTCString()
-            document.cookie = name + "=" + value + ";" + expires
+            var expires = ";expires=" + date.toUTCString()
+            document.cookie = name + "=" + value + expires + ";secure"
         },
 
         cookieBanner: function(obj) {
